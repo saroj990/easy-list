@@ -5,11 +5,12 @@ import Column from "./Column";
 
 const List = (props) => {
   const { todos } = props;
-  return todos.columnOrder.map((columnId) => {
+  const todoColumns = todos.columnOrder.map((columnId) => {
     const column = todos.columns[columnId];
     const tasks = column.taskIds.map((taskId) => todos.tasks[taskId]);
     return <Column key={column.id} column={column} tasks={tasks} />;
   });
+  return <div className="flex justify-around w-screen">{todoColumns}</div>;
 };
 
 // List.propTypes = {
