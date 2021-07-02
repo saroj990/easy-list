@@ -9,10 +9,14 @@ const Column = (props) => {
   return (
     <Draggable draggableId={column.id} index={index}>
       {(provided1) => (
-        <div {...provided1.draggableProps} ref={provided1.innerRef}>
+        <div
+          className="border border-indigo-200 bg-white mx-4 py-4 rounded-md shadow-2xl"
+          {...provided1.draggableProps}
+          ref={provided1.innerRef}
+        >
           <div
             {...provided1.dragHandleProps}
-            className="text-center text-lg font-normal"
+            className="text-center text-lg font-bold text-blue-500"
           >
             {column.title}
           </div>
@@ -22,8 +26,8 @@ const Column = (props) => {
                 ref={provided.innerRef}
                 {...provided.droppableProps}
                 isDraggingOver={snapshot.isDraggingOver}
-                className={`min-h-400 min-w-250 p-4 m-2 h-auto rounded-lg shadow-2xl border border-indigo-200 border-1 border-black ${
-                  snapshot.isDraggingOver ? "bg-blue-100" : "bg-white"
+                className={`min-h-400 min-w-250 p-4 h-auto ${
+                  snapshot.isDraggingOver ? "bg-indigo-100" : "bg-white"
                 }`}
               >
                 {tasks.map((task, idx) => (

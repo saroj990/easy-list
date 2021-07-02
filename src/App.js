@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
+import { IconNotes, IconDotsVertical, IconBell } from "@tabler/icons";
 
 import data from "./data/data";
 import Column from "./todo-list/Column";
@@ -85,7 +86,26 @@ function App() {
 
   return (
     <div className="App">
-      <div> Welcome to the Easy List App</div>
+      <nav className="flex h-16 items-center justify-between w-full border border-gray-200 mb-12 p-4">
+        <div className="flex text-indigo-600">
+          <IconNotes size={25} />
+          <div className="font-bold">Easy List</div>
+        </div>
+        <div className="font-bold flex justify-center items-center">
+          <div className="mx-4">
+            <IconBell
+              size={32}
+              className="text-indigo-500 transform rotate-12"
+            />
+          </div>
+          <div className="rounded-full p-2 border border-gray-400 text-indigo-500">
+            SS
+          </div>
+          <div>
+            <IconDotsVertical className="text-indigo-500" />
+          </div>
+        </div>
+      </nav>
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable
           droppableId="all-columns"

@@ -19,8 +19,8 @@ const Task = (props) => {
           ref={provided.innerRef}
           key={id}
           isDragging={snapshot.isDragging}
-          className={`p-2 m-2 h-auto shadow-lg text-center rounded-md border border-black flex items-center justify-center ${
-            snapshot.isDragging ? "bg-green-100" : "bg-blue-100"
+          className={`px-2 py-4 m-4 h-auto shadow-lg text-center rounded-md border border-black flex items-center justify-start ${
+            snapshot.isDragging ? "bg-green-100" : "bg-blue-200"
           }`}
         >
           <div>{task.content}</div>
